@@ -1,41 +1,31 @@
-import { useState } from "react"
-
-const List = () => {
-    const [data, setData] = useState([
-    { name: '', age: '' }
-  ])
-    const handleFormChange = () => {
-    
+const List = ({ data, type }) => {
+  const renderList = () => {
+    if (type === 'ul') {
+      return (
+        <ul>
+          {data.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      );
+    } else if (type === 'ol') {
+      return (
+        <ol>
+          {data.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ol>
+      );
+    } else {
+      return null; // Invalid type, do not render a list
     }
-
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        console.log(data)
-    }
+  };
 
   return (
-    <div style={{border: 'thin', padding: '2rem', margin: '1rem'}}>
-        Dynamic List Component
-        <br/>
-    <button onClick={()=>{}} style={{margin: '1rem'}}>Click For Ordered List</button>
-    <button onClick={()=>{}} style={{margin: '1rem'}}>Click For Unordered List</button>
-    <form>
-        {data.map((input, index) => {
-          return (
-            <div key={index}>
-              <input style={{margin: '1rem'}}
-                name='name'
-                placeholder='Name'
-                value={input.name}
-                onChange={event => handleFormChange(index, event)}
-              />
-              <button>Save</button>
-            </div>
-          )
-        })}
-      </form>
+    <div style={{ border: '1px solid #ccc', padding: '1rem', margin: '1rem' }}>
+      {renderList()}
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;
