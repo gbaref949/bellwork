@@ -54,6 +54,9 @@ const List = ({ data }) => {
       <button onClick={addName} style={{ margin: '1rem' }}>
         Add Name
       </button>
+      <button onClick={saveNames} style={{ margin: '1rem' }}>
+        Save Name
+      </button>
       <button onClick={toggleListType} style={{ margin: '1rem' }}>
         Switch List
       </button>
@@ -64,10 +67,7 @@ const List = ({ data }) => {
               {item}{' '}
               <button
                 onClick={() => removeName(index)}
-                style={{ marginLeft: '0.5rem' }}
-              >
-                Remove
-              </button>
+                style={{ marginLeft: '0.5rem' }}>Remove</button>
             </li>
           ))}
         </ul>
@@ -78,10 +78,7 @@ const List = ({ data }) => {
               {item}{' '}
               <button
                 onClick={() => removeName(index)}
-                style={{ marginLeft: '0.5rem' }}
-              >
-                Remove
-              </button>
+                style={{ marginLeft: '0.5rem' }}> Remove </button>
             </li>
           ))}
         </ol>
