@@ -78,7 +78,8 @@ const List = ({ data }) => {
               {item}{' '}
               <button
                 onClick={() => removeName(index)}
-                style={{ marginLeft: '0.5rem' }}>
+                style={{ marginLeft: '0.5rem' }}
+              >
                 Remove
               </button>
             </li>
