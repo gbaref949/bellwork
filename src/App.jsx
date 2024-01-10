@@ -1,26 +1,13 @@
 import './App.css';
-import List from './components/List';
+import List from './components/List.jsx';
 
-function App() {
-  const testData = [
-    'Noah',
-    'Ren',
-    'Georgi',
-    'Ethan',
-    'Mercutio',
-    'Jacob',
-    'Andrew M.',
-    'Johnathan',
-    'Matthew A.',
-    'Matthew C.',
-  ];
-  
+function App () {
+  const data = ['Georgi', 'Noah', 'Ren', 'Ethan', 'Murphy', 'Jacob', 'Sabrina', 'Nico', 'Mercurtio', 'Audrey'];
   return (
-    <div className="App App-header">
-      <List data={testData} type='ul' />
-      <List data={testData} type='ol' />
-     </div>
+    <div>
+      <List data={data}/>
+    </div>
   );
-}
+};
 
 export default App;
